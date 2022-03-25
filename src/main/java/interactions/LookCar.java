@@ -14,7 +14,6 @@ import java.util.List;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.HomeTivix.BTN_CITY;
 import static userinterfaces.HomeTivix.BTN_COUNTRY;
-import static userinterfaces.HomeTivix.BTN_RENT_CONTINUE;
 import static userinterfaces.HomeTivix.BTN_SEARCH;
 import static userinterfaces.HomeTivix.INPUT_DROP_UP_DATE;
 import static userinterfaces.HomeTivix.INPUT_MODEL;
@@ -39,7 +38,6 @@ public class LookCar implements Task {
                 Enter.theValue(reservationInformation.get(0).getDropUpDate()).into(INPUT_DROP_UP_DATE),
                 Click.on(BTN_SEARCH),
                 SelectCar.option(reservationInformation.get(0).getModel())
-
         );
     }
 

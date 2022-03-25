@@ -32,7 +32,7 @@ public class HomeTivix {
     }
 
     public static final Target BTN_RENT (int carOption){
-        return Target.the("List of available cars")
+        return Target.the("Buttons Rent")
                 .located(By.xpath("//td[.='"+carOption+"$']//parent::tr//child::td"));
     }
 

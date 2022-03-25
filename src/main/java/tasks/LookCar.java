@@ -1,6 +1,5 @@
 package tasks;
 
-import interactions.PersonalInformation;
 import models.ReservationInformation;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

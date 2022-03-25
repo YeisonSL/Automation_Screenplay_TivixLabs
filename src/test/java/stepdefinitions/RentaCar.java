@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import enums.Llave;
 import enums.Portal;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -21,7 +20,7 @@ import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.equalTo;
-import static utilities.Constantes.USUARIO;
+import static utilities.Constants.USUARIO;
 import static net.serenitybdd.screenplay.actors.OnStage.theActor;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -39,9 +38,7 @@ public class RentaCar {
                 entry.get("lastName"),
                 entry.get("cardNumber"),
                 entry.get("email")
-
         );
-
     }
 
 
@@ -50,15 +47,14 @@ public class RentaCar {
         OnStage.setTheStage(new OnlineCast());
     }
 
-    @Given("the client enters the tivix portal")
+    @Given("the user enters the tivix portal")
     public void theClientEntersTheTivixPortal() {
         theActor(USUARIO).wasAbleTo(Open.url(Portal.TIVIX.getPortal()));
     }
 
-    @When("the customer looks for the car")
+    @When("the user looks for the car")
     public void theCustomerLooksForTheCar(List<ReservationInformation> infoProgramacion) {
         theActorInTheSpotlight().attemptsTo(LookCar.withTheData(infoProgramacion));
-
     }
 
     @And("make the reservation")
@@ -66,7 +62,7 @@ public class RentaCar {
         theActorInTheSpotlight().attemptsTo(RentCar.withTheData(infoProgramacion));
     }
 
-    @Entonces("the client should see reservation information")
+    @Entonces("the user should see reservation information")
     public void theClientShouldSeeReservationInformationn() {;
       theActorInTheSpotlight().should(seeThat(ValidateRent.wrong(), equalTo(true)));
     }

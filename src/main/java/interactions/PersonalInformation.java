@@ -30,7 +30,6 @@ public class PersonalInformation implements Interaction {
                 Enter.theValue(reservationInformation.get(0).getEmail()).into(userinterfaces.PersonalInformation.LBL_EMAIL),
                 Click.on(BTN_RENT)
         );
-
     }
 
     public static PersonalInformation getInto(List<ReservationInformation> reservationInformation) {

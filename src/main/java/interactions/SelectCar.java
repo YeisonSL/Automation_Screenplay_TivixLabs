@@ -42,7 +42,6 @@ public class SelectCar implements Interaction {
                         Click.on(BTN_RENT_CONTINUE));
                 break;
             }
-
        }
     }
 
